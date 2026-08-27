@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AgenticCloud, { type AgenticTerm } from '../components/AgenticCloud';
 import MobileMenu from '../components/MobileMenu';
 
 const experience = [
@@ -94,26 +95,121 @@ const agenticProcess = [
 ];
 
 const agenticTerms = [
-  'Graph engineering',
-  'Spec-driven development',
-  'Agent orchestration',
-  'Persistent runtimes',
-  'Parallel execution',
-  'Multi-agent workflows',
-  'Verification loops',
-  'Human-in-the-loop',
-  'Model routing',
-  'Herdr',
-  'Pi',
-  'Jcode',
-  'Open Design',
-  'Codex',
-  'Claude',
-  'Gemini',
-  'ChatGPT',
-  'Ollama',
-  'OpenClaw',
-];
+  {
+    label: 'Graph engineering',
+    category: 'Method',
+    description:
+      'Graph engineering structures knowledge, dependencies and workflows as connected nodes and relationships. It makes context easier for agents to traverse than a flat collection of documents. The graph can expose ownership, impact and next actions. That creates a stronger foundation for retrieval, orchestration and verification.',
+  },
+  {
+    label: 'Spec-driven development',
+    category: 'Method',
+    description:
+      'Spec-driven development turns intent into a concrete, testable specification before implementation begins. The specification becomes shared context for people and agents. It defines scope, constraints and acceptance criteria. Each iteration can then improve the specification instead of relying on increasingly long prompts.',
+  },
+  {
+    label: 'Agent orchestration',
+    category: 'Method',
+    description:
+      'Agent orchestration coordinates which agent, model and tool should handle each part of a task. It manages handoffs, context and sequencing across the workflow. Good orchestration keeps parallel work aligned with one goal. It also creates clear points for review, recovery and verification.',
+  },
+  {
+    label: 'Persistent runtimes',
+    category: 'Pattern',
+    description:
+      'Persistent runtimes keep agent sessions and processes alive beyond a single interaction. Long-running work can continue while the user disconnects or switches devices. Logs, terminals and intermediate state remain available for inspection. This makes agentic work more durable and easier to resume.',
+  },
+  {
+    label: 'Parallel execution',
+    category: 'Pattern',
+    description:
+      'Parallel execution splits independent work into concurrent streams. Agents can research, implement and verify different parts at the same time. The results are then reconciled against a shared specification. Used carefully, this reduces cycle time without losing control of the outcome.',
+  },
+  {
+    label: 'Multi-agent workflows',
+    category: 'Pattern',
+    description:
+      'Multi-agent workflows assign distinct responsibilities to several collaborating agents. Each agent can work with its own context, tools and definition of done. A coordinating layer manages dependencies and combines the results. This is useful when a problem benefits from specialized roles or independent review.',
+  },
+  {
+    label: 'Verification loops',
+    category: 'Pattern',
+    description:
+      "Verification loops repeatedly compare an agent's output with tests, requirements and real system behavior. Failures become evidence for the next iteration rather than a final result. Automated checks catch mechanical problems, while human review handles judgment. The loop continues until the outcome meets the agreed standard.",
+  },
+  {
+    label: 'Human-in-the-loop',
+    category: 'Pattern',
+    description:
+      'Human-in-the-loop design keeps people involved where context, risk or judgment matters most. Agents can prepare work and recommend actions, while a person approves sensitive decisions. Feedback is captured and fed into the next cycle. This balances automation with accountability.',
+  },
+  {
+    label: 'Model routing',
+    category: 'Method',
+    description:
+      'Model routing selects the best model for each task based on capability, cost, speed and policy. Simple work can use a fast model while complex reasoning is sent to a stronger one. Routing can also provide fallbacks when a model or provider is unavailable. The goal is reliable performance without using the most expensive option everywhere.',
+  },
+  {
+    label: 'Herdr',
+    category: 'Tool',
+    description:
+      'Herdr is a persistent runtime for running and supervising coding agents in real terminal sessions. It keeps work alive when you disconnect and makes multiple agent states visible in one place. I use it when agent work needs to survive beyond a single local session.',
+  },
+  {
+    label: 'Pi',
+    category: 'Tool',
+    description:
+      'Pi is a minimal, extensible coding-agent harness that adapts to the workflow around it. Extensions, skills and prompt templates can shape its tools, context and interface. It is useful when the agent environment itself needs to be customized rather than accepted as a fixed product.',
+  },
+  {
+    label: 'Jcode',
+    category: 'Tool',
+    description:
+      'Jcode is an open-source coding agent that works across terminal, desktop and browser surfaces. It can inspect a codebase, propose changes, edit files and run commands with visible approvals. Its auditability makes the work easy to follow and redirect.',
+  },
+  {
+    label: 'Open Design',
+    category: 'Tool',
+    description:
+      'Open Design is an open-source, agent-native workspace for turning ideas into visual and production-ready output. It connects coding agents to design systems, previews and reusable workflows. The result stays local and remains part of the actual project rather than a detached mockup.',
+  },
+  {
+    label: 'Codex',
+    category: 'Tool',
+    description:
+      'OpenAI Codex is a coding agent for reading, changing, running and reviewing software across local and cloud environments.',
+  },
+  {
+    label: 'Claude',
+    category: 'Tool',
+    description:
+      "Claude is Anthropic's model family and agent platform, used for reasoning, coding and long-context development work.",
+  },
+  {
+    label: 'Gemini',
+    category: 'Tool',
+    description:
+      "Gemini is Google's multimodal model family, used across coding, analysis and tool-connected workflows.",
+  },
+  {
+    label: 'ChatGPT',
+    category: 'Tool',
+    description:
+      "ChatGPT is OpenAI's general-purpose AI workspace for conversation, research, analysis and tool-assisted work.",
+  },
+  {
+    label: 'Ollama',
+    category: 'Tool',
+    description:
+      'Ollama runs open models locally and can also connect agent tools to hosted models. It is useful when privacy, model choice or local experimentation matters.',
+  },
+  {
+    label: 'OpenClaw',
+    category: 'Tool',
+    description:
+      "OpenClaw is a local-first personal agent platform that connects models, skills and messaging channels. It can operate continuously on the user's own machine and keep state outside a vendor-specific cloud. The platform is useful for building assistants that work across multiple apps and communication surfaces.",
+  },
+] satisfies AgenticTerm[];
 ---
 
 <BaseLayout
@@ -225,11 +321,7 @@ const agenticTerms = [
           <p>Tools, methods and patterns</p>
           <p>The building blocks behind how I design, orchestrate and improve agentic systems.</p>
         </div>
-        <ul class="agentic-cloud" aria-label="Agentic development tools and practices">
-          {agenticTerms.map((term) => (
-            <li>{term}</li>
-          ))}
-        </ul>
+        <AgenticCloud terms={agenticTerms} client:visible />
       </div>
     </section>
 

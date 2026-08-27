@@ -67,6 +67,17 @@ button {
   outline-offset: 5px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 ::selection {
   background: var(--ink);
   color: var(--light);
@@ -532,7 +543,7 @@ button {
   font-weight: 540;
   letter-spacing: -0.052em;
   line-height: 1.08;
-  transition: opacity 220ms var(--ease-out);
+  transition: opacity 180ms var(--ease-out);
 }
 
 .agentic-cloud li::after {
@@ -545,8 +556,178 @@ button {
   content: '';
 }
 
-.agentic-cloud:has(li:hover) li:not(:hover) {
-  opacity: 0.28;
+.agentic-cloud.is-interacting li:not(.is-active) {
+  opacity: 0.07;
+}
+
+.agentic-term {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: help;
+  font: inherit;
+  font-stretch: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: left;
+  transform: translateY(0);
+  transition: transform 180ms var(--ease-out);
+}
+
+.agentic-cloud li.is-active .agentic-term {
+  transform: translateY(-0.06em);
+}
+
+.agentic-term:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0.12em;
+}
+
+.agentic-tooltip {
+  position: fixed;
+  z-index: 200;
+  width: min(30rem, calc(100vw - 2rem));
+  padding: 1.1rem 1.25rem 1.25rem;
+  border: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+  background: var(--paper);
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  visibility: hidden;
+}
+
+.agentic-tooltip[data-positioned='true'] {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  animation: tooltip-in 220ms var(--ease-out) both;
+}
+
+.agentic-tooltip[data-placement='below'][data-positioned='true'] {
+  animation-name: tooltip-in-below;
+}
+
+.agentic-tooltip::after {
+  position: absolute;
+  left: var(--tooltip-anchor-x);
+  width: 0.72rem;
+  height: 0.72rem;
+  background: var(--paper);
+  content: '';
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.agentic-tooltip[data-placement='above']::after {
+  top: calc(100% - 0.36rem);
+  border-right: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+  border-bottom: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+}
+
+.agentic-tooltip[data-placement='below']::after {
+  bottom: calc(100% - 0.36rem);
+  border-top: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+  border-left: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+}
+
+.agentic-tooltip-category {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 680;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.agentic-tooltip strong {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 610;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.agentic-tooltip-copy {
+  position: relative;
+  max-width: 62ch;
+  margin: 0;
+  color: color-mix(in oklch, var(--ink), transparent 13%);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.agentic-tooltip-measure {
+  display: block;
+  visibility: hidden;
+}
+
+.agentic-tooltip-typed {
+  position: absolute;
+  inset: 0;
+}
+
+.agentic-tooltip-caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 0.12em;
+  background: currentColor;
+  vertical-align: -0.12em;
+  animation: tooltip-caret 680ms steps(1, end) infinite;
+}
+
+.agentic-tooltip-caret.is-complete {
+  animation: tooltip-caret-out 500ms 420ms var(--ease-out) both;
+}
+
+@keyframes tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltip-in-below {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltip-caret {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes tooltip-caret-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .experience-section {
