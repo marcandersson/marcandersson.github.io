@@ -1,9 +1,0 @@
-.loader span:nth-child(1),
-.loader span:nth-child(2) {
-	display: none;
-}
-
-.loader span:nth-child(3) {
-	display: block;
-	transform: translateY(-50%);
-}

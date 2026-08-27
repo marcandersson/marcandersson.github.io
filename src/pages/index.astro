@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MobileMenu from '../components/MobileMenu';
+
+const experience = [
+  {
+    years: '2023 / 2024',
+    company: 'Swimbird',
+    role: 'Senior Fullstack Solutions Engineer',
+    description:
+      'Developed frontend and backend solutions for data-intensive, business-critical financial platforms using Go, Python, Java, Angular, GraphQL and Kubernetes, with a focus on scalability and reliability.',
+  },
+  {
+    years: '2023',
+    company: 'Visual Art',
+    role: 'Senior Fullstack Developer',
+    description:
+      'Developed frontend and backend features for a digital signage platform, supporting ongoing maintenance and platform reliability with C#/.NET, Vue, Kubernetes and test-driven development.',
+  },
+  {
+    years: '2019 / 2021',
+    company: 'Clara Financial Consulting',
+    role: 'Senior Consultant',
+    description:
+      'Designed, developed and operated financial services and systems, including data-intensive solutions in lending and consulting work for SEB.',
+  },
+  {
+    years: '2013 / 2018',
+    company: 'Champs & Chimps',
+    role: 'CEO & Partner',
+    description:
+      'Operated the digital agency and led design, development, project management, DevOps and client relations.',
+  },
+  {
+    years: '2010 / 2013',
+    company: 'Dempsey',
+    role: 'Development Director',
+    description:
+      'Led development, team management, client relations and DevOps across digital delivery.',
+  },
+  {
+    years: '2009 / 2010',
+    company: 'Visual Art',
+    role: 'Developer',
+    description:
+      'Developed digital signage applications, early multi-touch solutions with Flash SDKs, and web-based systems using JavaScript, PHP, ASP, CSS and HTML.',
+  },
+];
+
+const skillGroups = [
+  {
+    number: '01',
+    title: 'Languages',
+    content: 'Golang, C#, F#, Java, Python, PHP, SQL, HTML, CSS, TypeScript and JavaScript',
+  },
+  {
+    number: '02',
+    title: 'Frameworks',
+    content:
+      'Spring Boot, Gin, Django, .NET, Laravel, CodeIgniter, Express, Hono, WordPress, Astro, Next.js, React, React Native, Angular, Vue, Svelte, SvelteKit, GraphQL, Cordova, Ionic, Bootstrap, Tailwind, SASS, Vite, Zod, Google Maps API, Mapbox GL JS, Turf.js, Terra Draw, Chart.js and ECharts',
+  },
+  {
+    number: '03',
+    title: 'Cloud & DevOps',
+    content:
+      'Azure, Google Cloud, AWS, Kubernetes, Docker, Cloudflare, Azure DevOps, Turborepo, Wrangler, Git and CI/CD',
+  },
+  {
+    number: '04',
+    title: 'AI & Agent Tooling',
+    content:
+      'Agent orchestration, MCP, Herdr, Pi, Jcode, Codex, OpenClaw, Antigravity, Ollama, Claude, Gemini, ChatGPT, Tavily, Midjourney and Stable Diffusion',
+  },
+  {
+    number: '05',
+    title: 'Data',
+    content:
+      'MariaDB, MySQL, MS SQL, PostgreSQL, PostGIS, Supabase, Firestore, BigQuery, MongoDB, SQLite and ClickHouse',
+  },
+  {
+    number: '06',
+    title: 'Quality & Delivery',
+    content:
+      'Playwright, Cypress, Jest, Vitest, MSW, TestingBot, Sentry, GrowthBook, ESLint, Prettier, Scrum, Kanban, SAFe, Agile, Asana, JIRA, Shortcut, DataGrip, Adobe Suite, Visual Studio and VS Code',
+  },
+];
+
+const agenticProcess = [
+  { number: '01', title: 'Frame', detail: 'Define the problem and the boundary.' },
+  { number: '02', title: 'Specify', detail: 'Turn intent into an executable specification.' },
+  { number: '03', title: 'Orchestrate', detail: 'Match agents, models and tools to the work.' },
+  { number: '04', title: 'Verify', detail: 'Test outputs against the system and the goal.' },
+  { number: '05', title: 'Learn', detail: 'Feed evidence back into the next iteration.' },
+];
+
+const agenticTerms = [
+  'Graph engineering',
+  'Spec-driven development',
+  'Agent orchestration',
+  'Persistent runtimes',
+  'Parallel execution',
+  'Multi-agent workflows',
+  'Verification loops',
+  'Human-in-the-loop',
+  'Model routing',
+  'Herdr',
+  'Pi',
+  'Jcode',
+  'Codex',
+  'Claude',
+  'Gemini',
+  'ChatGPT',
+  'Ollama',
+  'OpenClaw',
+];
+---
+
+<BaseLayout
+  title="Marc Andersson | Senior Fullstack Developer"
+  description="Senior fullstack developer and hands-on technology lead building financial, energy and data-intensive products with cloud platforms and agentic AI."
+>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Marc Andersson, back to top">MA</a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#profile">Profile</a>
+      <a href="#agentic">Agentic</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <MobileMenu client:load />
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-role">
+        <p>Senior Fullstack Developer</p>
+        <p>AI Systems / Cloud</p>
+      </div>
+
+      <h1 id="hero-title">
+        <span>Marc</span>
+        <span>Andersson</span>
+      </h1>
+
+      <figure class="hero-portrait">
+        <div class="portrait-field">
+          <img src="/images/marc-andersson.png" alt="Portrait of Marc Andersson" />
+        </div>
+      </figure>
+
+      <div class="hero-intro">
+        <p>
+          Hands-on technology lead building financial, energy and data-intensive products with
+          modern fullstack engineering, cloud platforms and agent orchestration.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#experience">Explore experience</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="profile-section" id="profile" aria-labelledby="profile-title">
+      <div class="section-index">
+        <span>01</span>
+        <span>Profile</span>
+      </div>
+      <div class="profile-heading">
+        <h2 id="profile-title">Systems that automatically evolve.</h2>
+      </div>
+      <div class="profile-copy">
+        <p class="lead">
+          Senior fullstack developer and hands-on technology lead with more than 15 years across
+          software architecture, cloud infrastructure, financial systems, design and product development.
+        </p>
+        <p>
+          I combine engineering depth with product sense. In recent years my work has focused on
+          AI-enabled automation, agent orchestration and cloud-native delivery, always with the aim
+          of making systems technically solid, useful in operations and clean enough for teams to keep improving.
+        </p>
+        <p>
+          Earlier work includes consulting for SEB, building trading bots and big data solutions in
+          lending, and leading technology-driven work in the advertising industry.
+        </p>
+        <p>
+          My current role has also sparked a deeper interest in the energy sector, with a particular
+          focus on green energy.
+        </p>
+      </div>
+      <aside class="profile-notes" aria-label="Profile highlights">
+        <p>Business needs to system architecture</p>
+        <p>Team leadership to hands-on delivery</p>
+        <p>Financial markets to applied AI</p>
+      </aside>
+    </section>
+
+    <section class="agentic-section" id="agentic" aria-labelledby="agentic-title">
+      <div class="section-index section-index-light">
+        <span>02</span>
+        <span>Agentic development</span>
+      </div>
+      <div class="agentic-heading">
+        <h2 id="agentic-title">Working with agents as a process.</h2>
+      </div>
+      <p class="agentic-intro">
+        Agentic development works best when it is treated as a continuous feedback loop. Each
+        iteration sharpens the specification, improves the context and makes the next decision more
+        reliable by carrying forward what was learned in the previous cycle.
+      </p>
+
+      <ol class="agentic-process" aria-label="Agentic development process">
+        {agenticProcess.map((step) => (
+          <li>
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.detail}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="agentic-cloud-block">
+        <div class="agentic-cloud-heading">
+          <p>Tools, methods and patterns</p>
+          <p>The building blocks behind how I design, orchestrate and improve agentic systems.</p>
+        </div>
+        <ul class="agentic-cloud" aria-label="Agentic development tools and practices">
+          {agenticTerms.map((term) => (
+            <li>{term}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="experience-section" id="experience" aria-label="Experience">
+      <div class="section-index">
+        <span>03</span>
+        <span>Experience</span>
+      </div>
+      <div class="experience-heading">
+        <p>
+          A career spanning engineering, product development, operations, client delivery and company leadership.
+        </p>
+      </div>
+
+      <article class="current-role">
+        <div class="current-role-label">
+          <span>Current role</span>
+          <span>Stockholm</span>
+        </div>
+        <div class="current-role-main">
+          <h3>Hemsol Group AB</h3>
+          <p class="current-role-title">Senior Fullstack Developer</p>
+          <p>
+            Responsible for tech operations, architecture and fullstack development across digital
+            financial services and energy products. Leading AI-enabled workflows and agent orchestration,
+            with deployments and integrations across Azure, Google Cloud, AWS and Cloudflare.
+          </p>
+        </div>
+        <ul class="current-role-tags" aria-label="Current role focus areas">
+          <li>Agent orchestration</li>
+          <li>Cloud architecture</li>
+          <li>Financial services</li>
+          <li>Energy products</li>
+        </ul>
+      </article>
+
+      <div class="experience-list">
+        {experience.map((job, index) => (
+          <article class="experience-row">
+            <div class="experience-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div>
+            <p class="experience-years">{job.years}</p>
+            <div class="experience-role">
+              <h3>{job.company}</h3>
+              <p>{job.role}</p>
+            </div>
+            <p class="experience-description">{job.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="skills-section" aria-labelledby="skills-title">
+      <div class="section-index">
+        <span>04</span>
+        <span>Capabilities</span>
+      </div>
+      <div class="skills-heading">
+        <h2 id="skills-title">A selection of technologies I’ve worked with recently.</h2>
+      </div>
+      <div class="skills-list">
+        {skillGroups.map((group) => (
+          <article class="skill-row">
+            <span aria-hidden="true">{group.number}</span>
+            <h3>{group.title}</h3>
+            <p>{group.content}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="education-section" aria-labelledby="education-title">
+      <div class="education-image" role="img" aria-label="Misty Scandinavian forest"></div>
+      <div class="education-content">
+        <div class="section-index section-index-light">
+          <span>05</span>
+          <span>Education & perspective</span>
+        </div>
+        <div class="education-block">
+          <p>2008 / 2010</p>
+          <h2 id="education-title">Hyper Island</h2>
+          <h3>Digital Media, DM10STO</h3>
+          <p>
+            Transformative learning focused on collaboration, creativity and the ability to turn
+            change into practical work.
+          </p>
+        </div>
+        <div class="personal-block">
+          <p>
+            Outside engineering, I follow the US stock market and recharge in nature with my dog, Athena.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-topline">
+      <span>06 / Contact</span>
+      <span>Stockholm, Sweden</span>
+    </div>
+    <p class="footer-prompt">Contact me</p>
+    <a class="footer-email" href="mailto:marc.andersson.new@gmail.com">
+      marc.andersson.new<wbr />@gmail.com
+    </a>
+    <div class="footer-details">
+      <div>
+        <span>Phone</span>
+        <a href="tel:+46735802763">+46 735 802 763</a>
+      </div>
+      <div>
+        <span>Location</span>
+        <p>Norra Djurgårdsstaden, Stockholm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Marc Andersson</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</BaseLayout>
