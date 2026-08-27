@@ -1618,6 +1618,52 @@ button {
   }
 }
 
+@media (max-width: 539px) {
+  .experience-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .experience-number {
+    display: none;
+  }
+
+  .experience-years,
+  .experience-role,
+  .experience-description {
+    width: 100%;
+    grid-column: 1;
+  }
+
+  .experience-description {
+    max-width: none;
+  }
+
+  .education-content {
+    min-height: 0;
+    padding: 2.75rem var(--page-pad) 3rem;
+  }
+
+  .education-block {
+    margin-top: 0;
+    padding-top: 3rem;
+  }
+
+  .education-block h3 {
+    margin: 1rem 0 1.4rem;
+  }
+
+  .personal-block {
+    margin-top: 2.75rem;
+    padding-top: 1.5rem;
+  }
+
+  .footer-email {
+    font-size: clamp(0.95rem, 4.6vw, 1.2rem);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 420px) {
   .hero-actions {
     align-items: flex-start;
