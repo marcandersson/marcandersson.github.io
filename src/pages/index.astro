@@ -7,6 +7,7 @@ const experience = [
   {
     years: '2023 / 2024',
     company: 'Swimbird',
+    logo: '/images/companies/swimbird.jpg',
     role: 'Senior Fullstack Solutions Engineer',
     description:
       'Developed frontend and backend solutions for data-intensive, business-critical financial platforms using Go, Python, Java, Angular, GraphQL and Kubernetes, with a focus on scalability and reliability.',
@@ -14,6 +15,8 @@ const experience = [
   {
     years: '2023',
     company: 'Visual Art',
+    logo: '/images/companies/visual-art.jpg',
+    logoClass: 'company-logo--visual-art',
     role: 'Senior Fullstack Developer',
     description:
       'Developed frontend and backend features for a digital signage platform, supporting ongoing maintenance and platform reliability with C#/.NET, Vue, Kubernetes and test-driven development.',
@@ -21,6 +24,7 @@ const experience = [
   {
     years: '2019 / 2021',
     company: 'Clara Financial Consulting',
+    logo: '/images/companies/clara-financial-consulting.png',
     role: 'Senior Consultant',
     description:
       'Designed, developed and operated financial services and systems, including data-intensive solutions in lending and consulting work for SEB.',
@@ -28,6 +32,8 @@ const experience = [
   {
     years: '2013 / 2018',
     company: 'Champs & Chimps',
+    logo: '/images/companies/champs-and-chimps.png',
+    logoClass: 'company-logo--champs',
     role: 'CEO & Partner',
     description:
       'Operated the digital agency and led design, development, project management, DevOps and client relations.',
@@ -35,6 +41,8 @@ const experience = [
   {
     years: '2010 / 2013',
     company: 'Dempsey',
+    logo: '/images/companies/dempsey.png',
+    logoClass: 'company-logo--signature',
     role: 'Development Director',
     description:
       'Led development, team management, client relations and DevOps across digital delivery.',
@@ -42,6 +50,8 @@ const experience = [
   {
     years: '2009 / 2010',
     company: 'Visual Art',
+    logo: '/images/companies/visual-art.jpg',
+    logoClass: 'company-logo--visual-art',
     role: 'Developer',
     description:
       'Developed digital signage applications, early multi-touch solutions with Flash SDKs, and web-based systems using JavaScript, PHP, ASP, CSS and HTML.',
@@ -342,8 +352,12 @@ const agenticTerms = [
           <span>Stockholm</span>
         </div>
         <div class="current-role-main">
-          <h3>Hemsol Group AB</h3>
-          <p class="current-role-title">Senior Fullstack Developer</p>
+          <div class="current-role-company">
+            <div class="current-role-company-copy">
+              <h3>Hemsol Group AB</h3>
+              <p class="current-role-title">Senior Fullstack Developer</p>
+            </div>
+          </div>
           <p>
             Responsible for tech operations, architecture and fullstack development across digital
             financial services and energy products. Leading AI-enabled workflows and agent orchestration,
@@ -364,8 +378,13 @@ const agenticTerms = [
             <div class="experience-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div>
             <p class="experience-years">{job.years}</p>
             <div class="experience-role">
-              <h3>{job.company}</h3>
-              <p>{job.role}</p>
+              <span class:list={['company-logo', job.logoClass]} aria-hidden="true">
+                <img src={job.logo} alt="" loading="lazy" decoding="async" />
+              </span>
+              <div class="experience-role-copy">
+                <h3>{job.company}</h3>
+                <p>{job.role}</p>
+              </div>
             </div>
             <p class="experience-description">{job.description}</p>
           </article>

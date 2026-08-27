@@ -766,8 +766,53 @@ button {
   text-transform: uppercase;
 }
 
+.current-role-company,
+.experience-role {
+  display: flex;
+  align-items: center;
+}
+
+.current-role-company {
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-bottom: 2rem;
+}
+
+.company-logo {
+  display: grid;
+  width: clamp(3.25rem, 3.75vw, 4rem);
+  height: clamp(3.25rem, 3.75vw, 4rem);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  padding: 0.35rem;
+  border: 0;
+  border-radius: 0.65rem;
+  background: #fff;
+}
+
+.company-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.04);
+}
+
+.company-logo--signature img {
+  transform: scale(1.5);
+}
+
+.company-logo--champs img {
+  transform: scale(0.8);
+}
+
+.company-logo--visual-art img {
+  filter: grayscale(1) invert(1) brightness(1.9);
+}
+
 .current-role-main h3 {
-  margin: 0 0 0.4rem;
+  margin: 0;
   font-size: clamp(2.3rem, 4.5vw, 5rem);
   font-weight: 580;
   letter-spacing: -0.055em;
@@ -775,7 +820,7 @@ button {
 }
 
 .current-role-title {
-  margin: 0 0 2rem;
+  margin: 0.45rem 0 0;
   font-size: 0.76rem;
   font-weight: 680;
   letter-spacing: 0.1em;
@@ -817,7 +862,7 @@ button {
   align-items: start;
   padding: clamp(2rem, 3.4vw, 3.5rem) 0;
   border-bottom: 1px solid var(--line);
-  grid-template-columns: 4rem 1.1fr 2.2fr 3.2fr;
+  grid-template-columns: 4rem 0.9fr 2.9fr 3.1fr;
   gap: clamp(1rem, 2.5vw, 2.5rem);
 }
 
@@ -832,11 +877,16 @@ button {
 }
 
 .experience-role h3 {
-  margin: 0 0 0.25rem;
+  margin: 0;
   font-size: clamp(1.35rem, 2.2vw, 2.15rem);
   font-weight: 570;
   letter-spacing: -0.035em;
   line-height: 1.15;
+}
+
+.experience-role {
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1.35vw, 1.15rem);
 }
 
 .experience-role p,
@@ -1484,6 +1534,11 @@ button {
     margin-bottom: 2rem;
   }
 
+  .current-role-company {
+    align-items: center;
+    gap: 1rem;
+  }
+
   .current-role-tags {
     margin-top: 2.5rem;
   }
@@ -1501,6 +1556,11 @@ button {
   .experience-role,
   .experience-description {
     grid-column: 2;
+  }
+
+  .company-logo {
+    width: 3rem;
+    height: 3rem;
   }
 
   .skills-list {
