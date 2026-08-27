@@ -590,6 +590,7 @@ button {
   width: min(30rem, calc(100vw - 2rem));
   padding: 1.1rem 1.25rem 1.25rem;
   border: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
+  border-radius: 0.5rem;
   background: var(--paper);
   color: var(--ink);
   opacity: 0;
