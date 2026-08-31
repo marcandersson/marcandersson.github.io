@@ -634,7 +634,7 @@ button {
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   body:has(.agentic-term:hover) .agentic-tooltip[data-positioned='true']::after {
-    animation: tooltip-arrow-spin 6s linear infinite;
+    animation: tooltip-arrow-spin 2s linear infinite;
   }
 }
 
