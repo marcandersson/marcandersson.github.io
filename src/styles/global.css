@@ -632,6 +632,22 @@ button {
   border-left: 1px solid color-mix(in oklch, var(--ink), transparent 72%);
 }
 
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body:has(.agentic-term:hover) .agentic-tooltip[data-positioned='true']::after {
+    animation: tooltip-arrow-spin 6s linear infinite;
+  }
+}
+
+@keyframes tooltip-arrow-spin {
+  from {
+    transform: translateX(-50%) rotateY(0deg) rotate(45deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotateY(360deg) rotate(45deg);
+  }
+}
+
 .agentic-tooltip-category {
   display: block;
   margin-bottom: 0.5rem;
